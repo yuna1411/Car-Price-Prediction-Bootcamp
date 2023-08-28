@@ -54,38 +54,42 @@ Saledate : Tanggal mobil dijual.
 
 
 ### Data Cleansing  
-**A. Dropping**
-      1. Rows with extreme values  
-          Menghapus baris-baris data yang memiliki extreme value seperti yang sudah ditemukan pada tahap EDA sebelumnya. Fitur-fitur tersebut adalah fitur odometer yang memiliki nilai 1 dan 999999 yang memiliki perbedaan yang sangat jauh, nilai selling price $1, dan nilai mmr $25 yang tidak masuk akal untuk ukuran harga sebuah mobil.  
-      2. Irrelevant features  
+
+**A. Dropping**  
+1. Rows with extreme values  
+          Menghapus baris-baris data yang memiliki extreme value seperti yang sudah ditemukan pada tahap EDA sebelumnya. Fitur-fitur tersebut adalah fitur odometer yang memiliki nilai 1 dan 999999 yang memiliki perbedaan yang sangat jauh, nilai selling price $1, dan nilai mmr $25 yang tidak masuk akal untuk ukuran harga sebuah mobil.
+2. Irrelevant features  
           Menghapus fitur-fitur yang dianggap tidak memiliki korelasi dalam penentuan harga mobil.  
+          
 **B. Handle Unique Values**  
-      Menyamaratakan penulisan string fitur-fitur kategorikal agar tidak memiliki value yang terduplikat.  
+Menyamaratakan penulisan string fitur-fitur kategorikal agar tidak memiliki value yang terduplikat.  
+      
 **C. Handle Missing Values**  
-      1. Mengisi fitur kategorikal dengan nilai modus.  
-      2. Mengisi fitur numerikal dengan nilai mean.  
-      3. Menghapus baris yang mengandung sedikit null value. 
+1. Mengisi fitur kategorikal dengan nilai modus.
+2. Mengisi fitur numerikal dengan nilai mean.
+3. Menghapus baris yang mengandung sedikit null value.
+   
 **D. Handle Outliers**  
-      Menghapus outliers dikarenakan hanya kurang dari 3% dari keseluruhan dataset.  
+Menghapus outliers dikarenakan hanya kurang dari 3% dari keseluruhan dataset.  
 
 
 ### Data Preparation (Feature Engineering)  
 **A. Feature Extraction**  
-      1. Made in 
-          Mengekstraksi fitur 'make' yaitu fitur yang mengandung merk atau brand mobil menjadi kategori berdasarkan asal negara pembuatnya.  
-      2. Body type  
-          Mengekstraksi fitur 'body' dengan menyederhanakan kategori body mobil menjadi lebih sederhana sesuai dengan tipe nya masing-masing. 
-      3. Is Auto  
-          Mengekstraksi fitur 'transmission' menjadi tipe data boolean dimana memberikan nilai True or False terhadap transmission berjenis automatic.  
-      4. Model clusters  
-          Mengekstraksi fitur 'model' menjadi beberapa macam klaster dengan menggunakan K-Modes.  
-      5. Trim clusters  
-          Mengekstraksi fitur 'trim' menjadi beberapa macam klaster dengan menggunakan K-Modes.  
+1. Made in
+   Mengekstraksi fitur 'make' yaitu fitur yang mengandung merk atau brand mobil menjadi kategori berdasarkan asal negara pembuatnya.
+2. Body type  
+   Mengekstraksi fitur 'body' dengan menyederhanakan kategori body mobil menjadi lebih sederhana sesuai dengan tipe nya masing-masing. 
+3. Is Auto  
+   Mengekstraksi fitur 'transmission' menjadi tipe data boolean dimana memberikan nilai True or False terhadap transmission berjenis automatic.  
+4. Model clusters  
+   Mengekstraksi fitur 'model' menjadi beberapa macam klaster dengan menggunakan K-Modes.  
+5. Trim clusters  
+   Mengekstraksi fitur 'trim' menjadi beberapa macam klaster dengan menggunakan K-Modes.  
 
 **B. Feature Encoding**  
-      1. One-Hot Encoding terhadap fitur Made in karena bukan termasuk data ordinal.  
-      2. One-Hot Encoding terhadap fitur Body type karena bukan termasuk data ordinal.  
+1. One-Hot Encoding terhadap fitur Made in karena bukan termasuk data ordinal.
+2. One-Hot Encoding terhadap fitur Body type karena bukan termasuk data ordinal.  
 
 **C. Feature Selection**  
-      Memilih fitur-fitur yang pada akhirnya akan digunakan untuk pemodelan.
+Memilih fitur-fitur yang pada akhirnya akan digunakan untuk pemodelan.
 
